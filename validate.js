@@ -12,7 +12,7 @@ function validateInstruction(instruction, operand, line, modelValue) {
         };
     }
 
-    let tokens = app.lexer.tokenize(line)[0][0];
+    let tokens = app.lexer.tokenize(line)[0];
     tokens = tokens.filter(tok => tok.getType() !== "COMMA");
 
     for (let i = 0; i < operandRules.length; i++) {
