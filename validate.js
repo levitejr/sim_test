@@ -3,7 +3,6 @@ export const declaredLabels = [];
 
 function validateInstruction(instruction, operand, line, modelValue) {
     const operandRules = INST_OPERANDS[instruction];
-    console.log(INST_OPERANDS);
     if (!operandRules) return { valid: true };
 
     if (operandRules.length !== operand.length) {
