@@ -3224,7 +3224,7 @@ class App {
     assemble() {
 
         // Getting text from the text window
-        let txt = document.getElementById('code_box').value;
+        let txt = window.editor.getValue();
 
         this.hideOpenPopup(this.current_popup); // hide any open popup
 
