@@ -251,7 +251,7 @@ require(['vs/editor/editor.main'], function () {
             },
             {
                 token: 'directives',
-                foreground: 'B96AD9'
+                foreground: 'B96ADA'
             },
             {
                 token: 'identifier',
@@ -273,7 +273,7 @@ require(['vs/editor/editor.main'], function () {
         scrollBeyondLastLine: false,
         overviewRulerLanes: 0,
         language: 'avr',
-        theme: 'avrLight',
+        theme: 'avrDark',
         value: localStorage.getItem('editorContent') || [
             '.section .data',
             '',
@@ -290,6 +290,8 @@ require(['vs/editor/editor.main'], function () {
         }
     });
 
+    console.log("Window loaded");
+;
     const model = window.editor.getModel();
     model.onDidChangeContent(() => {
         const markers = checkSyntax(model);
