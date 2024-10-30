@@ -233,7 +233,7 @@ require(['vs/editor/editor.main'], function () {
             }
         ],
         colors: {
-            'editor.foreground': '#000000'
+            'editor.foreground': '#222222'
         }
     })
 
@@ -251,7 +251,7 @@ require(['vs/editor/editor.main'], function () {
             },
             {
                 token: 'directives',
-                foreground: 'FBFB97'
+                foreground: 'B96AD9'
             },
             {
                 token: 'identifier',

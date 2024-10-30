@@ -5008,6 +5008,13 @@ class App {
         let bg, fg, table_heading_bg, table_body_bg, borderColor, borderStyle, borderThickness, status_background_colour, border_radius, muted_text_colour;
 
         this.theme = (this.theme === 'dark') ? 'light' : 'dark';
+        
+        if (this.theme === 'dark') {
+            window.editor._themeService.setTheme('avrDark');
+        } else {
+            window.editor._themeService.setTheme('avrLight');
+        }
+
         bg = (this.theme === 'dark') ? '#2e2e2e' : '#fff';
         fg = (this.theme === 'dark') ? '#fff' : '#444';
         table_heading_bg = (this.theme === 'dark') ? '#474747' : '#bbb';
