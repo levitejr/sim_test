@@ -34,7 +34,7 @@ require(['vs/editor/editor.main'], function () {
                 [/\.(section|text|data|global|end)/, 'directives'],
 
                 // Data type
-                [/\.(byte|word|string|ascii|asciz|space)/, 'type'],
+                [/\.(byte|word|string|ascii|asciz|space|equ|set)/, 'type'],
 
                 // Numbers
                 [/\b0[xX][0-9a-fA-F]+\b/, "number.hex"],
@@ -229,11 +229,19 @@ require(['vs/editor/editor.main'], function () {
             },
             {
                 token: 'type',
-                foreground: 'F1C40F'
+                foreground: 'B96AD9'
+            },
+            {
+                token: 'number',        // perhaps make this number.hex if it doesnt work with hex
+                foreground: '87BD6C'
+            },
+            {
+                token: 'comment',
+                foreground: '7A7E8A'
             }
         ],
         colors: {
-            'editor.foreground': '#222222'
+            'editor.foreground': '#252525'
         }
     })
 
@@ -260,7 +268,16 @@ require(['vs/editor/editor.main'], function () {
             {
                 token: 'operators',
                 foreground: 'FFFFFF'
+            },
+            {
+                token: 'number',        // perhaps make this number.hex if it doesnt work with hex
+                foreground: 'B5CEA8'
+            },
+            {
+                token: 'comment',
+                foreground: '7A7E8A'
             }
+
         ],
         colors: {
             'editor.foreground': '#FFFFFF'
@@ -273,7 +290,7 @@ require(['vs/editor/editor.main'], function () {
         scrollBeyondLastLine: false,
         overviewRulerLanes: 0,
         language: 'avr',
-        theme: 'avrDark',
+        theme: 'avrLight',
         value: localStorage.getItem('editorContent') || [
             '.section .data',
             '',

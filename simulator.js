@@ -410,7 +410,9 @@ class Lexer {
         const patterns = [
             [/^;.*$/, null],                    // comments
             [/^\s+/, null],                     // whitespace
-            [/^[\w_]{1}[^;\s,]*:/, 'LABEL'],    // labels
+            [/^\.(section|text|data|global|end)/, 'DIR'],      // directives
+            [/^\.(byte|word|string|ascii|asciz|space|equ|set)/, 'DIR'],      // directives
+            [/^[\w_\.]{1}[^;\s,\.]*:/, 'LABEL'],    // labels
             [/^lo8(?=[(])/, 'LO8'],             // lo8
             [/^LO8(?=[(])/, 'LO8'],             // lo8
             [/^hi8(?=[(])/, 'HI8'],             // hi8
@@ -427,7 +429,7 @@ class Lexer {
             [/^“.*?”/, 'STR'],                  // string
             [/^‘.*?’/, 'STR'],                  // string
             // [/^\.[^\.\s]+/, 'DIR'],          // directives. .ORG WORKS WHAT OTHER DIRECTIVES? NO DEF no UNDEF
-            [/^\.[\w\.]+(?=[;\s])/, 'DIR'],      // directives
+            // [/^\.[\w\.]+(?=[;\s])/, 'DIR'],      // directives
             [/^[YZ][ \t]*\+[ \t]*\d{1,2}/, 'WORDPLUSQ'],        // word+q
             [/^[X][ \t]*\+[ \t]*\d{1,2}/, 'XPLUSQ'],            // X+q
             [/^[XYZ]\+/, 'WORDPLUS'],           // word+
@@ -456,7 +458,7 @@ class Lexer {
             [/^>{1}/, 'GT'],                    // greater than
             [/^<{1}/, 'LT'],                    // less than
             [/^=/, 'EQ'],                       // equal (assignment)
-            [/^[^\w\s;]+/, 'SYMBOL'],           // symbols
+            [/^[^\w\s;\.]+/, 'SYMBOL'],           // symbols
             [/^[^\s\d]{1}[\w\d_]*/, 'REF']      // references (like labels used in an instruction)
         ];
         
@@ -5008,12 +5010,9 @@ class App {
         let bg, fg, table_heading_bg, table_body_bg, borderColor, borderStyle, borderThickness, status_background_colour, border_radius, muted_text_colour;
 
         this.theme = (this.theme === 'dark') ? 'light' : 'dark';
-        
-        if (this.theme === 'dark') {
-            window.editor._themeService.setTheme('avrDark');
-        } else {
-            window.editor._themeService.setTheme('avrLight');
-        }
+
+        if (this.theme === 'dark') window.editor._themeService.setTheme('avrDark');
+        else window.editor._themeService.setTheme('avrLight');
 
         bg = (this.theme === 'dark') ? '#2e2e2e' : '#fff';
         fg = (this.theme === 'dark') ? '#fff' : '#444';

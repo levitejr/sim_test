@@ -142,51 +142,13 @@ h1 {
     float: right;
 }
 
-textarea {
-    color: var(--fg);
-    background-color: var(--bg);
-    font-size: 16px;
-    font-family: 'Source Code Pro', 'Courier New', Courier, sans-serif;
-    border: 1px solid #e0e0e0;
+
+.monaco-editor {
+    min-width: 100%;
+    min-height: 500px;
     border-radius: 10px;
-    padding: 10px;
-    align-self: center;
-    resize: none;
 }
 
-.line-numbers {
-    margin-right: 0;
-    width: 10%;
-    float: left;
-}
-
-.lines-box {
-    font-size: 16px;
-    font-family: 'Source Code Pro', 'Courier New', Courier, sans-serif;
-    text-align: right;
-    padding-top: 10px;
-    padding-right: 10%;
-    padding-left: 10%;
-    width: 80%;
-    overflow: hidden;
-    border-right: 0;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
-.code {
-    float: right;
-    width: 90%;
-}
-
-
-.text-code {
-    margin-bottom: 10px;
-    max-width: 95%;
-    min-width: 30%;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-}
 
 .console {
     margin-bottom: 10px;
@@ -379,6 +341,7 @@ small {
     text-align: center;
     padding-top: 4px;
     padding-bottom: 4px;
+    font-size: 13px;
 }
 
 .table-stats-body {
