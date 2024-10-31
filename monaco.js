@@ -18,6 +18,9 @@ require(['vs/editor/editor.main'], function () {
         registers: registers,
         tokenizer: {
             root: [
+                // Brackets
+                [/[\w_\.]{1}[^;\s,\.]*:/, 'label'],
+
                 [/[a-z_$][\w$]*/, {
                     cases: {
                         '@avrInstructions': 'keyword',
@@ -49,10 +52,8 @@ require(['vs/editor/editor.main'], function () {
                 [/[:,+-]/, "operators"],
 
                 // String
-                [/\".*?\"/, 'quote'],
-                [/\'.*?\'/, 'quote'],
-                [/“.*?”/, 'quote'],
-                [/‘.*?’/, 'quote']
+                [/\"(.*?)\"/, "quote"],
+                [/\'(.*?)\'/, "quote"]
             ]
         }
     });
@@ -247,7 +248,11 @@ require(['vs/editor/editor.main'], function () {
             },
             {
                 token: 'quote',
-                foreground: 'CD7373'
+                foreground: 'C74242'
+            },
+            {
+                token: 'label',
+                foreground: '3459C7'
             },
             {
                 token: 'comment',
@@ -294,6 +299,10 @@ require(['vs/editor/editor.main'], function () {
             {
                 token: 'quote',
                 foreground: 'CD7373'
+            },
+            {
+                token: 'label',
+                foreground: '3459C7'
             },
             {
                 token: 'comment',
