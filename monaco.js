@@ -47,6 +47,12 @@ require(['vs/editor/editor.main'], function () {
 
                 // Operators
                 [/[:,+-]/, "operators"],
+
+                // String
+                [/^\".*?\"/, 'string'],
+                [/^\'.*?\'/, 'string'],
+                [/^“.*?”/, 'string'],
+                [/^‘.*?’/, 'string']
             ]
         }
     });
@@ -240,6 +246,10 @@ require(['vs/editor/editor.main'], function () {
                 foreground: '2FB30E'
             },
             {
+                token: 'string',
+                foreground: 'CD7373'
+            },
+            {
                 token: 'comment',
                 foreground: '727785'
             }
@@ -280,6 +290,10 @@ require(['vs/editor/editor.main'], function () {
             {
                 token: 'number.hex',
                 foreground: '#88C468'
+            },
+            {
+                token: 'string',
+                foreground: 'CD7373'
             },
             {
                 token: 'comment',
