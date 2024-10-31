@@ -252,7 +252,7 @@ require(['vs/editor/editor.main'], function () {
             },
             {
                 token: 'label',
-                foreground: '3459C7'
+                foreground: '7887FA'
             },
             {
                 token: 'comment',
@@ -298,11 +298,11 @@ require(['vs/editor/editor.main'], function () {
             },
             {
                 token: 'quote',
-                foreground: 'CD7373'
+                foreground: 'ED9898'
             },
             {
                 token: 'label',
-                foreground: '3459C7'
+                foreground: '869ADB'
             },
             {
                 token: 'comment',
