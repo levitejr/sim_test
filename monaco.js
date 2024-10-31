@@ -49,10 +49,10 @@ require(['vs/editor/editor.main'], function () {
                 [/[:,+-]/, "operators"],
 
                 // String
-                [/^\".*?\"/, 'string'],
-                [/^\'.*?\'/, 'string'],
-                [/^“.*?”/, 'string'],
-                [/^‘.*?’/, 'string']
+                [/\".*?\"/, 'string'],
+                [/\'.*?\'/, 'string'],
+                [/“.*?”/, 'string'],
+                [/‘.*?’/, 'string']
             ]
         }
     });
