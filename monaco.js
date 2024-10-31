@@ -213,7 +213,7 @@ require(['vs/editor/editor.main'], function () {
         rules: [
             {
                 token: 'keyword',
-                foreground: '3598DB'
+                foreground: '439CD6'
             },
             {
                 token: 'functions',
@@ -233,15 +233,15 @@ require(['vs/editor/editor.main'], function () {
             },
             {
                 token: 'number',
-                foreground: '57C221'
+                foreground: '2FB30E'
             },
             {
                 token: 'number.hex',
-                foreground: '57C221'
+                foreground: '2FB30E'
             },
             {
                 token: 'comment',
-                foreground: '5B606E'
+                foreground: '727785'
             }
         ],
         colors: {
