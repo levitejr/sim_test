@@ -49,10 +49,10 @@ require(['vs/editor/editor.main'], function () {
                 [/[:,+-]/, "operators"],
 
                 // String
-                [/\".*?\"/, 'string'],
-                [/\'.*?\'/, 'string'],
-                [/“.*?”/, 'string'],
-                [/‘.*?’/, 'string']
+                [/\".*?\"/, 'quote'],
+                [/\'.*?\'/, 'quote'],
+                [/“.*?”/, 'quote'],
+                [/‘.*?’/, 'quote']
             ]
         }
     });
@@ -246,7 +246,7 @@ require(['vs/editor/editor.main'], function () {
                 foreground: '2FB30E'
             },
             {
-                token: 'string',
+                token: 'quote',
                 foreground: 'CD7373'
             },
             {
@@ -292,7 +292,7 @@ require(['vs/editor/editor.main'], function () {
                 foreground: '#88C468'
             },
             {
-                token: 'string',
+                token: 'quote',
                 foreground: 'CD7373'
             },
             {
