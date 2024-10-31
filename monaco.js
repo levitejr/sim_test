@@ -232,16 +232,20 @@ require(['vs/editor/editor.main'], function () {
                 foreground: 'B96AD9'
             },
             {
-                token: 'number',        // perhaps make this number.hex if it doesnt work with hex
-                foreground: '87BD6C'
+                token: 'number',
+                foreground: '57C221'
+            },
+            {
+                token: 'number.hex',
+                foreground: '57C221'
             },
             {
                 token: 'comment',
-                foreground: '7A7E8A'
+                foreground: '5B606E'
             }
         ],
         colors: {
-            'editor.foreground': '#252525'
+            'editor.foreground': '#2E2E2E'
         }
     })
 
@@ -270,8 +274,12 @@ require(['vs/editor/editor.main'], function () {
                 foreground: 'FFFFFF'
             },
             {
-                token: 'number',        // perhaps make this number.hex if it doesnt work with hex
-                foreground: 'B5CEA8'
+                token: 'number',
+                foreground: '#88C468'
+            },
+            {
+                token: 'number.hex',
+                foreground: '#88C468'
             },
             {
                 token: 'comment',
@@ -307,8 +315,6 @@ require(['vs/editor/editor.main'], function () {
         }
     });
 
-    console.log("Window loaded");
-;
     const model = window.editor.getModel();
     model.onDidChangeContent(() => {
         const markers = checkSyntax(model);
